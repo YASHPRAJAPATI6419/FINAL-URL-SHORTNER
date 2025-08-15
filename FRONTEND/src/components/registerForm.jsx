@@ -20,13 +20,10 @@ const Register = () => {
     try {
       const response = await registerUser(name, email, password);
       
-      // Store user data in localStorage for frontend access
       localStorage.setItem("user", JSON.stringify(response.data.user));
       
-      // Success message
-      alert(`Account created successfully! Welcome, ${name}!`);
+      alert(`Account created successfully! Welcome, ${name}!`); 
       
-      // Redirect to URL shortener
       navigate("/login");
     } catch (err) {
       console.error("Registration error:", err);
@@ -40,7 +37,6 @@ const Register = () => {
     alert(`${provider} registration integration coming soon!`);
   };
 
-  // Inline styles with Tailwind-equivalent CSS
   const styles = {
     container: {
       minHeight: '100vh',
@@ -520,4 +516,4 @@ const Register = () => {
   );
 };
 
-export default Register; 
+export default Register;

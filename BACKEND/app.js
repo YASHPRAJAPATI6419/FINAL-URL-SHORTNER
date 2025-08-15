@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import connectDB from "./src/config/mongo.config.js"; 
 import shorturlroute from "./src/routes/shortUrl.route.js";
 import auth_route from "./src/routes/auth.route.js"; 
-import user_route from "./src/routes/user.route.js"; // Naya route import karein
+import user_route from "./src/routes/user.route.js";
 import { redirectToFullUrl } from "./src/controller/shortUrl.controller.js";
 import { errorHandler } from "./src/utils/errorHandler.js";
 import cors from 'cors';
@@ -27,9 +27,6 @@ app.use(attachUser);
 
 app.use('/api/auth', auth_route);
 app.use('/api/url', shorturlroute);
-// =========================================================================
-// YEH NAYI LINE ADD KI GAYI HAI
-// =========================================================================
 app.use('/api/user', user_route);
 
 app.get("/:shortCode", redirectToFullUrl); 

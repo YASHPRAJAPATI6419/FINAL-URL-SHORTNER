@@ -1,4 +1,3 @@
-// src/components/Navbar.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { SunIcon, MoonIcon, MenuIcon, XIcon, SparklesIcon } from '@heroicons/react/outline';
@@ -37,7 +36,9 @@ const Navbar = ({ darkMode, setDarkMode, menuOpen, setMenuOpen }) => {
         >
           Login
         </Link>
+        {/* FIX: Added 'to="/register"' prop to the Link component for the Register button */}
         <Link
+          to="/register" 
           className="px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold shadow-xl hover:scale-105 transition-all duration-300"
         >
           Register
